@@ -1,2 +1,2 @@
-# UIKit-Doc
-UIKit 에 대한 apple 공식 문서 번역 
+# IOS DOC
+IOS 개발을 공부하면서 정리한 문서 
