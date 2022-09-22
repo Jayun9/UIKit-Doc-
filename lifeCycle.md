@@ -22,6 +22,17 @@ ios 앱의 생명 주기에 대한 정리
 
 초기화 시에는 다음과 같은 작업을 실행한다.
 
+- app data 초기
+- 앱 실행에 필요한 리소스가 있는지 확인한다. 
+- 앱을 실행하면서 해야하는 일회성 설정을 수행한다. 
+- 앱에서 사용하는 모든 중요한 서비스에 연결한다. 
+
+### Move long-running tasks off the main thread
+앱의 시작하고 UI 는 `application(:didFinishLaunchingWithOptions:)` 이 반환되기 전까지 보이지 않는다. 해당 메서드나 `application(:willFinshLaunchingWithOptions:)` 같은 메서드에서 오래거리는 작업을 진행하게 되면 화면이 늦게 보이게 되고 사용자에게 안좋은 경험을 줄 수 있다. 
+
+사용자 경험을 높이기 위해서는 초기화시에 오래걸리는 작업은 피하고, 오래걸리는 작업이 있다면 main thread 에서 벗어나 비동기로 실행하도록 한다. 
+
+
 
 
 
